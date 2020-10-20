@@ -67,7 +67,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
     }
     
     
-    
+    //
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
