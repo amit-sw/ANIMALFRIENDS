@@ -12,19 +12,11 @@ import SwiftyJSON
 
 class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    
     @IBOutlet weak var topLabel: UILabel!
-    
     @IBOutlet weak var imageMain: UIImageView!
-    
     @IBOutlet weak var answerLabel: UILabel!
-    
     @IBOutlet weak var buttonMain: UIButton!
-    
     @IBOutlet weak var buttonSecond: UIButton!
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
