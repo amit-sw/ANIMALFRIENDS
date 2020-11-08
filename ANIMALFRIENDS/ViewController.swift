@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AVFoundation
 
 class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -80,6 +81,15 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
         //buttonSecond.isHidden = false
         
     }
+    
+    func say(string: String) {
+        let utterance = AVSpeechUtterance(string: string)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = 0.5
+
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+    }
 
     
     func processFile(image: Data) {
@@ -98,6 +108,7 @@ class ViewController: UIViewController,UINavigationControllerDelegate, UIImagePi
                    print("Saw predicted value \(String(describing: predictedValue))")
                    let predictionMessage = "Animal Name: " + predictedValue!
                    self.answerLabel.text=predictionMessage
+                self.say(string: predictionMessage)
 
                case .failure(let error):
                    print("\n\n Request failed with error: \(error)")
